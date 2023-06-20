@@ -38,14 +38,14 @@ export default defineConfig({
       use: {
         headless: true,
         ...devices['Desktop Chrome'],
-        baseURL: 'https://www.gamesforthebrain.com' 
+        baseURL: 'https://www.gamesforthebrain.com/' 
       },
     },
     {
       name: 'cards-api',
       testMatch: /.*_api.spec.ts/,
       use: {
-        baseURL: 'https://deckofcardsapi.com',
+        baseURL: 'https://deckofcardsapi.com/',
       }
     }
 

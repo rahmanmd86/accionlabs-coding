@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "https://github.com/rahmanmd86/accionlabs-coding.git",
   "scripts": {
-    "test": "npx playwright-test test --config=playwright.config.ts"
+    "test": "npx playwright test --config=playwright.config.ts"
   },
   "author": "rahmanmd86 <mrahman.shazib@gmail.com>",
   "license": "The Unlicense",

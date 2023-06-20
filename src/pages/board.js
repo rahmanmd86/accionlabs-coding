@@ -1,4 +1,4 @@
-const { messages } = require('../../src/resources/constants')
+const { messages } = require('../resources/constants')
 import { expect } from '@playwright/test';
 
 export class Board {

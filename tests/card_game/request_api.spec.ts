@@ -8,7 +8,7 @@ test.describe('Validate when navigating the API site, it', () => {
     })
 })
 
-test.describe('Validate GET Request', () => {
+test.describe('Validate using cards api request', () => {
     test('returns success response with data', async ({ request }) => {
         const response = await request.get("/api/deck/new/shuffle/?deck_count=1")
         expect(response.ok()).toBeTruthy();
@@ -20,7 +20,7 @@ test.describe('Validate GET Request', () => {
         }))
     })
 
-    test('performs user actions', async ({ request }) => {
+    test('user can draw cards and decide blackjack winner', async ({ request }) => {
         // Get new deck
         let response = await request.get("/api/deck/new/")
         expect(response.ok()).toBeTruthy();
@@ -40,7 +40,8 @@ test.describe('Validate GET Request', () => {
             responseData = await response.json()
             playerCards.push(responseData.cards)
         }
-        expect(responseData.remaining).toBe(48);
+        const expectedCardCount = 52 - numOfPlayers*2
+        expect(responseData.remaining).toBe(expectedCardCount);
 
         // Determines and prints which player has blackjack
         const player = getClosest21(playerCards);
