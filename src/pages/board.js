@@ -1,3 +1,6 @@
+const { messages } = require('../../src/resources/constants')
+import { expect } from '@playwright/test';
+
 export class Board {
 
     constructor(page) {
@@ -6,25 +9,15 @@ export class Board {
         this.grayboxLocator = "img[src$='gray.gif']"
         this.comPlayer = page.locator("img[src='me1.gif']")
         this.player = page.locator(this.playerLocator)
-    }
-
-    async playerAt(position) {
-        let locatePlayer = `${this.playerLocator}[name=space${position}]`
-        await this.page.locator(locatePlayer).click({ delay: 2000 })
-        return this
-    }
-
-    async moveTo(position) {
-        let locateGrayBox =  `${this.grayboxLocator}[name=space${position}]`
-        await this.page.locator(locateGrayBox).click()
+        this.message = page.locator("p#message");
     }
 
     async movePlayer(from, to){
-        let locatePlayer = `${this.playerLocator}[name=space${from}]`
-        await this.page.locator(locatePlayer).click({ delay: 2000 })
-        let locateGrayBox =  `${this.grayboxLocator}[name=space${to}]`
-        await this.page.locator(locateGrayBox).click()
+        let locate = `${this.playerLocator}[name=space${from}]`
+        await this.page.locator(locate).click({ delay: 2000 })
+        locate = `${this.grayboxLocator}[name=space${to}]`
+        await this.page.locator(locate).click()
+        await expect(this.message).toHaveText(messages.makeMove)
     }
-
 
 }

@@ -6,7 +6,6 @@ class Landing {
         this.page = page
         this.header = page.locator("div.page > h1")
         this.board = page.locator("div#board");
-        this.message = page.locator("p#message");
         this.restartLink = page.getByRole('link', {name: "Restart..."})
         this.rulesLink = page.getByRole('link', {name: "Rules"})
     }

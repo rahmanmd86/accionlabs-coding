@@ -33,12 +33,21 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'checkers-ui',
+      testMatch: /.*_ui.spec.ts/,
       use: {
         headless: true,
-        ...devices['Desktop Chrome'] 
-        },
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://www.gamesforthebrain.com' 
+      },
     },
+    {
+      name: 'cards-api',
+      testMatch: /.*_api.spec.ts/,
+      use: {
+        baseURL: 'https://deckofcardsapi.com',
+      }
+    }
 
     // {
     //   name: 'firefox',
