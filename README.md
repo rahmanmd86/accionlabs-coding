@@ -18,10 +18,10 @@ accionlabs-coding
     |-- tests
           |-- card_game
                   |-- request_api.spec.ts
-          |-- checkers-game
+          |-- checkers_game
                   |-- game_ui.spec.ts
-    package.json
-    playwright.config.ts        (test configurations)
+    |-- package.json
+    |-- playwright.config.ts     (test configurations)
 ```
 
 # Prerequisites
@@ -32,7 +32,7 @@ accionlabs-coding
 
 - Clone the repository
 - Navigate to project directory: `accionlabs-coding`
-- Run 'npm install`
+- Run `npm install`
 
 # Running Tests
 
@@ -42,11 +42,11 @@ accionlabs-coding
 
 # Future enhancements
 
-- Enable CI/CD with Github Actions or Jenkins
 - Dockerize and containerize for CI/CD
+- Enable CI/CD with Github Actions or Jenkins
 - Enable logging mechanism
 - Enable report generation
-- Enable multi-environment support
+- Enable cross-browser and multi-environment support
 
 ### Author: Md Mahbubur Rahman
 

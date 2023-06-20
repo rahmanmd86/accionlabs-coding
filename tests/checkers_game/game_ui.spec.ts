@@ -1,4 +1,5 @@
 const { Landing } = require('../../src/pages/landing.js');
+import { messages } from '../../src/resources/constants'
 import { test, expect } from '@playwright/test';
 
 let landingPage;
@@ -24,7 +25,7 @@ test.describe("Validate the site loads and", () => {
         await expect(board.comPlayer).toHaveCount(12);
         await expect(board.player).toHaveCount(12);
         await expect(board.message).toBeVisible()
-        await expect(board.message).toHaveText("Select an orange piece to move.")
+        await expect(board.message).toHaveText(messages.moveOrange)
     });
 
     test('has Restart link', async ({ page }) => {
